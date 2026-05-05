@@ -16,3 +16,5 @@
 pip install -r requirements.txt  
 python -m pytest --alluredir=allure-results  
 allure serve allure-results
+# selenium-automation-framework
+Selenium automation framework using Python, PyTest, and Page Object Model
