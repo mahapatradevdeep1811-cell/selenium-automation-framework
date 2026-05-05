@@ -31,3 +31,14 @@ def test_invalid_login(driver):
     )
 
     assert "Epic sadface" in driver.page_source
+
+def test_add_to_cart(driver):
+    login = LoginPage(driver)
+    login.load()
+
+    login.login("standard_user", "secret_sauce")
+
+    driver.find_element("id", "add-to-cart-sauce-labs-backpack").click()
+    cart = driver.find_element("class name", "shopping_cart_badge").text
+
+    assert cart == "1"
